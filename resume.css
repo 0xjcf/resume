@@ -1,0 +1,104 @@
+body {
+  font-family: "Roboto Mono", monospace, "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+.container {
+  display: flex;
+  flex-flow: column;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+h1,
+h2,
+h3 {
+  color: #0056b3;
+  position: relative;
+  cursor: default;
+  transition: color 0.5s ease;
+}
+p,
+li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+h1 {
+  text-align: center;
+}
+/* Initial visibility for h1 spans */
+h1 span {
+  display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Animated border bottom for h2 and h3 */
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #6e45e2, #88d3ce);
+  transition: width 0.5s ease;
+}
+h2:hover::after {
+  width: 100%;
+}
+/* Text animation on hover for h1 */
+h1 span {
+  animation: slideIn 0.5s forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+h3 {
+  color: #0056b3;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.job-description li {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.header-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.header-icons a {
+  text-decoration: none;
+}
+#experience {
+  background-color: #e8e8e8;
+  padding: 20px;
+  margin-top: 50px;
+}
+#contact-me {
+  display: flex;
+  text-align: center;
+  flex-flow: column;
+  align-items: center;
+}
+#contact-me h2 {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: auto;
+}
+section {
+  margin: 10px;
+}
