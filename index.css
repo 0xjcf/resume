@@ -102,3 +102,97 @@ h3 {
 section {
   margin: 10px;
 }
+
+.dark-mode {
+  background-color: #252525;
+  color: #fff;
+}
+
+/* Soft shade of white for headers in dark mode */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+  color: #ffd700; /* Soft shade of white */
+}
+
+.dark-mode #experience {
+  background-color: #444343;
+}
+
+.dark-mode h2::after {
+  background: linear-gradient(
+    90deg,
+    #ffd700,
+    #ffffff
+  ); /* Transition from yellow to white */
+}
+
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px; /* Adjust top position as needed */
+  right: 20px; /* Adjust right position as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#dark-mode-text {
+  margin-bottom: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #0056b3;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Adjust styling for dark mode */
+.dark-mode #dark-mode-toggle #toggle-dark-mode:checked + .slider {
+  background-color: #444343; /* Dark red background in dark mode */
+}
+
+.dark-mode #dark-mode-toggle #toggle-dark-mode:checked + .slider:before {
+  background-color: #ffd700; /* Yellow color for slider in dark mode */
+}
