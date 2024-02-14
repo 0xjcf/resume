@@ -104,7 +104,7 @@ section {
 }
 
 .dark-mode {
-  background-color: #252525;
+  background-color: #1d1d1d;
   color: #fff;
 }
 
@@ -129,11 +129,9 @@ section {
 
 #dark-mode-toggle {
   position: fixed;
-  top: 20px; /* Adjust top position as needed */
-  right: 20px; /* Adjust right position as needed */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  top: 40px; /* Adjust top position as needed */
+  right: 40px; /* Adjust right position as needed */
+  width: 5em;
 }
 #dark-mode-text {
   margin-bottom: 10px;
@@ -142,7 +140,7 @@ section {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 100%;
   height: 34px;
 }
 
@@ -185,14 +183,56 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(45px);
 }
 
 /* Adjust styling for dark mode */
 .dark-mode #dark-mode-toggle #toggle-dark-mode:checked + .slider {
-  background-color: #444343; /* Dark red background in dark mode */
+  background-color: #525252; /* Dark red background in dark mode */
 }
 
 .dark-mode #dark-mode-toggle #toggle-dark-mode:checked + .slider:before {
   background-color: #ffd700; /* Yellow color for slider in dark mode */
+}
+
+/* Position the SVGs */
+#night-mode-svg,
+#day-mode-svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+#night-mode-svg {
+  left: 8px;
+  display: none; /* Initially hide night mode SVG */
+}
+
+#day-mode-svg {
+  right: 8px;
+}
+
+/* Show night mode SVG when dark mode is enabled */
+.dark-mode #night-mode-svg {
+  display: block;
+}
+
+/* Show day mode SVG when dark mode is disabled */
+.dark-mode #day-mode-svg {
+  display: none;
+}
+
+/* Change color of the night mode SVG */
+#night-mode-svg path {
+  fill: #ffd700; /* Yellow color */
+}
+
+/* Change color of the day mode SVG */
+#day-mode-svg circle {
+  fill: #0056b3; /* Yellow color */
+}
+
+#day-mode-svg line {
+  stroke: #0056b3; /* Yellow color */
 }
