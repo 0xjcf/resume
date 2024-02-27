@@ -236,3 +236,40 @@ input:checked + .slider:before {
 #day-mode-svg line {
   stroke: #0056b3; /* Yellow color */
 }
+
+/* PDF Generation Adjustments */
+@media print {
+  .pdf-generation {
+    /* Disable animations */
+    h1 span,
+    h2::after {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Remove dark mode styles */
+    .dark-mode,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode #experience,
+    .dark-mode h2::after,
+    .dark-mode #dark-mode-toggle #toggle-dark-mode:checked + .slider,
+    .dark-mode #dark-mode-toggle #toggle-dark-mode:checked + .slider:before,
+    #night-mode-svg,
+    #day-mode-svg {
+      /* Override dark mode specific styles as needed */
+      background-color: initial !important;
+      color: initial !important;
+    }
+
+    /* Hide elements not needed in PDF */
+    #dark-mode-toggle,
+    .switch,
+    #night-mode-svg,
+    #day-mode-svg {
+      display: none !important;
+    }
+  }
+}
