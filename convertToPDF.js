@@ -18,6 +18,7 @@ const puppeteer = require("puppeteer");
   await page.pdf({
     path: "resume.pdf",
     format: "A4",
+    width: "210mm",
     printBackground: true,
   });
 
