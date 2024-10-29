@@ -22,22 +22,27 @@ h3 {
 }
 p,
 li {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 2;
 }
 ul {
   margin: 0;
   padding: 0;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 h1 {
   text-align: center;
+  font-size: 3rem;
 }
 /* Initial visibility for h1 spans */
 h1 span {
   display: inline-block;
   opacity: 1;
   transform: translateX(0);
+}
+
+h2 {
+  font-size: 2rem;
 }
 /* Animated border bottom for h2 and h3 */
 h2::after {
@@ -75,6 +80,7 @@ h3 {
 li {
   margin-bottom: 10px;
   margin-left: 20px;
+  padding: 5px;
 }
 .header-icons {
   display: flex;
@@ -90,16 +96,9 @@ li {
   margin-top: 50px;
 }
 #contact-me {
-  display: flex;
-  text-align: center;
-  flex-flow: column;
-  align-items: center;
+  margin-bottom: 80px;
 }
-#contact-me h2 {
-  width: 100%;
-  margin-top: 2em;
-  margin-bottom: auto;
-}
+
 section {
   margin: 10px;
 }
@@ -237,6 +236,14 @@ input:checked + .slider:before {
 
 #day-mode-svg line {
   stroke: #0056b3; /* Yellow color */
+}
+
+.education-item {
+  padding: 2px 0px;
+}
+
+.program {
+  font-style: italic;
 }
 
 /* PDF Generation Adjustments */
